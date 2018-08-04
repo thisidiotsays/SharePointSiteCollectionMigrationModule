@@ -14,7 +14,15 @@ The module exposes a number of functions which mimic the steps I would follow to
 5. Set the status of the site collections to Unlock
 
 ## What the module does
-The module makes extensive use of verbose output as well as writing to a log file to maintain a history of all the actions during the migration.
+
+The module makes extensive use of verbose output as well as writing to a log file to maintain a history of all the actions during the migration. The log file is written to C:\Users\\*username*\AppData\Local
+
+I've tried to make the module as flexible as possible by making each step its own function so the process can be orchestrated in what ever suits you best.
+
+The [Move-SiteCollectionUsingModule.ps1](https://github.com/thisidiotsays/SharePointSiteCollectionMigrationModule/blob/master/Move-SiteCollectionsUsingModule.ps1) shows an example how I have been using the module.
+
+> [!NOTE]
+> Please note this file assumes you are migrating multiple site collections as I check for the number of successful backups. This is easy enough to fix and I will get round to that :-)
 
 ### Module Functions
 
