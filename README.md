@@ -26,17 +26,17 @@ The [Move-SiteCollectionUsingModule.ps1](https://github.com/thisidiotsays/ShareP
 
 ### Module Functions
 
+> [!IMPORTANT]
+> At the moment I don't load the SharePoint Snap-in as part of the module as I noticed this could cause issues when reloading the module. Although I think this is more an issue during development rather than when running the module.
+>
+> Before running any functions in the module make sure you have loaded the Microsoft.SHarePoint.PowerShell Snapin
 
 |Function Name  |Description  |
 |---------|---------|
-|Test-TISSPSiteMoveInfo         |Checks the site collections to be moved to ensure that the site (URL) exists, the target content database exists, the target content database is different from the site's current database and that the target database is associated with the same web application as the current site collection.         |
+|Test-TISSPSiteMoveInfo         |Checks the site collection(s) to be moved to ensure that the site actually exists (no typos in the URL), the target content database exists, the target content database is different from the site's current database and that the target database is associated with the same web application as the current site collection. The function requires the objects being tested have a Url and a ContentDatabase property. I use a CSV with two columns for Url and ContentDatabase. The function shows the result of each site, what passed and what failed as well as an overall Pass or Fail so you can review the results.   |
 |Set-TISSPSiteLockStatus     |Used to set the site collection status to Unlock or Read Only         |
 |Backup-TISSPSiteToDisk     |Backup the site to a specified directory         |
 |Move-TISSPSite     |Move the site collection to the specified target content database         |
 |Restart-TISSPIISAllServers     |Restarts IIS on all the servers in the SharePoint farm (does not include the SQL Server)         |
 |Start-TISSPGradualDeleteTimerJob     |This is useful when testing on a dev. environment. If you try to move a site collection back to its original database before this job runs you will receive an error. Usually this job runs once a day usually at some point in then early hours of the morning          |
 |Get-TISSPBackupDiskSpaceAvailable     |STILL UNDER DEV - Estimates how much storage space is required for the site collection back up and how much free space you have left on your target disk location         |
-
-
-> [!IMPORTANT]
-> At the moment I don't load the SharePoint Snap-in as part of the module as I noticed this could cause issues when reloading the module. Although I think this is more an issue during development rather than when running the module.
