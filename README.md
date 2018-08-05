@@ -30,6 +30,7 @@ The [Move-SiteCollectionUsingModule.ps1](https://github.com/thisidiotsays/ShareP
 > At the moment I don't load the SharePoint Snap-in as part of the module as I noticed this could cause issues when reloading the module. Although I think this is more an issue during development rather than when running the module.
 >
 > Before running any functions in the module make sure you have loaded the Microsoft.SHarePoint.PowerShell Snapin
+>
 > [!WARNING]
 > I've used this module in production environments, however, ensure you do testing in a non-production environment first. You use this module at your own risk.
 
